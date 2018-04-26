@@ -5,9 +5,13 @@ import {
   Col
 } from 'reactstrap'
 import { connect } from 'react-redux'
+import {Redirect} from "react-router-dom";
 
 const UserProfile = (props) => {
-  console.log('up props', props)
+  console.log(' User Profile props:', props)
+    if (!Object.keys(props.user).length){
+    return (<Redirect to="/login" />)
+    }
   return (
     <div>
       <Container>
